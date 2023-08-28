@@ -1,10 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import {About, Footer, Header, Skills, Testimonial, Work} from "./containers"
+import {Navbar} from "./components"
 
 function App() {
   return (
-    <div className="App">
-      App
+    <div className="app">
+      <Navbar/>
+      <Header/>
+      <About/>
+      <Work/>
+      <Skills/>
+      <Testimonial/>
+      <Footer/>
     </div>
   );
 }
