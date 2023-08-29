@@ -28,7 +28,7 @@ export default function Header() {
             <span>👋</span>
             <div style={{marginLeft: 20}}>
                <p className='p-text'>Hello, I am </p>
-               <h1 className="head-text">Adithya R Iyer</h1>
+               <h1 className="head-text">Adithya Iyer</h1>
             </div>
           </div>
 

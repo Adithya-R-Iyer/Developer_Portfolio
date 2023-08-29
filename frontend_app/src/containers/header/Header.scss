@@ -163,6 +163,7 @@
         width: 100%;
         object-fit: contain;
         z-index: 1;
+        height: 50rem;
     }
 
     .overlay_circle {
@@ -171,11 +172,29 @@
         right: 0;
         bottom: 0;
         z-index: 0;
-        height: 90%;
+        height: 95%;
         width: 100%;
     }
 
     @media screen and (max-width:1200px) {
+
         margin: 2rem 0;
+        .overlay_circle {
+            width: 135%;
+            left: -70px;
+            bottom: -125px;
+            height: 120%;
+        }
+    }
+
+    @media screen and (max-width:650px) {
+        .overlay_circle {
+            width: 112%;
+            // left: -70px;
+            // bottom: -50px;
+            height: 125%;
+            left: -25px;
+            bottom: -100px;
+        }
     }
 }
