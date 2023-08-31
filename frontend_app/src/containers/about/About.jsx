@@ -39,4 +39,4 @@ const About = ()=> {
   )
 }
 
-export default AppWrap(About,"about");
+export default AppWrap(About,"about", "container-bg");
