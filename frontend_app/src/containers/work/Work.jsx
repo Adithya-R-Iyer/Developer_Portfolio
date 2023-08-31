@@ -24,7 +24,7 @@ const Work = () => {
   const handleWorkFilter = (item) => {};
 
   return (
-    <>
+    <div className="app__works">
       <h2 className="head-text">
         My Creative <span>Portfolio</span> section
       </h2>
@@ -33,7 +33,7 @@ const Work = () => {
           (item, index) => (
             <div
               key={index}
-              onClick={() => handleWorkFilter(item)}
+              onClick={() => {handleWorkFilter(item);setActiveFilter(item)}}
               className={`app__work-filter-item app__flex p-text ${
                 activeFilter === item ? "item-active" : ""
               }`}
@@ -62,7 +62,7 @@ const Work = () => {
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
                   <motion.div
                     whileInView = {{scale: [0, 1]}}
-                    whileHover = {{opacity: [0, 1]}}
+                    whileHover = {{opacity: [0, 1], scale: [0, 1]}}
                     transition = {{duration: 0.25}}
                     className="app__flex"
                   >
@@ -72,7 +72,7 @@ const Work = () => {
                 <a href={work.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
                     whileInView = {{scale: [0, 1]}}
-                    whileHover = {{opacity: [0, 1]}}
+                    whileHover = {{opacity: [0, 1], scale: [0.1]}}
                     transition = {{duration: 0.25}}
                     className="app__flex"
                   >
@@ -93,7 +93,7 @@ const Work = () => {
           </div>
         ))}
       </motion.div>
-    </>
+    </div>
   );
 };
 
