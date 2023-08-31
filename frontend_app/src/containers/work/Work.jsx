@@ -21,7 +21,19 @@ const Work = () => {
     });
   }, []);
 
-  const handleWorkFilter = (item) => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item)
+    setAnimateCard({y:100, opacity:0}) //to get the shuffled animation of the cards
+    setTimeout(() => {
+      setAnimateCard({y:0, opacity:1})
+
+      if(item == 'All') {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work)=>(work.tags.includes(item))))
+      }
+    }, 500);
+  };
 
   return (
     <div className="app__works">
@@ -33,7 +45,7 @@ const Work = () => {
           (item, index) => (
             <div
               key={index}
-              onClick={() => {handleWorkFilter(item);setActiveFilter(item)}}
+              onClick={() => {handleWorkFilter(item)}}
               className={`app__work-filter-item app__flex p-text ${
                 activeFilter === item ? "item-active" : ""
               }`}
