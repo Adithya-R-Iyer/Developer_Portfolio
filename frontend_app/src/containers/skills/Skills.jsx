@@ -25,6 +25,7 @@ const Skills = ()=> {
     })
     
   },[])
+  let toolTipClassNames;
 
   return (
     <div className='app__skills'>
@@ -46,7 +47,7 @@ const Skills = ()=> {
           ))}
         </motion.div>
 
-        <motion.div className="app__skills-exp">
+        <div className="app__skills-exp">
           {experiences?.map((experience)=>(
             <motion.div
               className="app__skills-exp-item"
@@ -56,34 +57,36 @@ const Skills = ()=> {
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience?.works?.map((work)=>(
-                  <>
+                {/* {toolTipClassNames = experience?.works?.map((work) => `.${`select-${work.name}`}`).join(' ')} */}
+                {experience?.works?.map((work, index)=>(
+                  <div key={index}>
                     <motion.div
                       whileInView={{opacity:[0,1]}}
                       transition={{duration: 0.5}}
-                      className="app__skills-exp-work app__flex select"
-                      data-tip
-                      data-for={work.name}
+                      className={`app__skills-exp-work class_${index}`}
+                      data-tip={`tip_${index}`}
+                      data-for={`tooltip_${index}`}
                       key={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
                     <Tooltip
-                      anchorSelect=".select"
-                      id={work.name}
+                      anchorSelect={`.class_${index}`}
+                      id={`tooltip_${index}`}
                       effect="solid"
-                      arrowColor="fff"
+                      arrowColor="#fff"
                       className="skills-tooltip"
+                      place="top"
                     >
                       {work.desc}
                     </Tooltip>
-                  </>
+                  </div>
                 ))}
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   )
