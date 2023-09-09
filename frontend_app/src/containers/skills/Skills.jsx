@@ -3,7 +3,7 @@ import "./Skills.scss";
 import { motion } from "framer-motion";
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
-import { AppWrap } from "../../wrapper";
+import { MotionWrap, AppWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
 const Skills = ()=> {
@@ -25,7 +25,7 @@ const Skills = ()=> {
     })
     
   },[])
-  let toolTipClassNames;
+  // let toolTipClassNames;
 
   return (
     <div className='app__skills'>
@@ -92,4 +92,4 @@ const Skills = ()=> {
   )
 }
 
-export default AppWrap(Skills, "skills", "container-bg");
+export default AppWrap(MotionWrap(Skills,"app__skills"), "skills", "container-bg");
