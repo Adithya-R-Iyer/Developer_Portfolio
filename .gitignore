@@ -1,2 +1,5 @@
 UnusedPictures
 .env
+
+# Local Netlify folder
+.netlify
