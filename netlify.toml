@@ -1,0 +1,10 @@
+[build]
+command = "npm run build"
+publish="frontend_app/build"
+base = "frontend_app"
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+
+[[plugins]]
+  package = "netlify-plugin-inline-functions"
