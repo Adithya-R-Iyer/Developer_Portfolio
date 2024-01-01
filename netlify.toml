@@ -1,6 +1,6 @@
 [build]
 command = "npm run build"
-publish="frontend_app/build"
+publish="build/"
 base = "frontend_app"
 
 [[plugins]]
